@@ -91,7 +91,7 @@ export class RichGridComponent {
   }
 
   public createRowData() {
-    alert('hello')
+    //alert('hello')
     const rowData: GridRow[] = [];
 
     this.gridDataService.getGridData().subscribe(
@@ -304,14 +304,14 @@ function percentCellRenderer(params: ICellRendererParams) {
   eDivPercentBar.className = 'div-percent-bar';
   eDivPercentBar.style.width = '100%';
   if (value === "Pass") {
-    eDivPercentBar.style.backgroundColor = 'Green';
+    eDivPercentBar.style.backgroundColor = '#7beda9';
   } else if (value === "InProgress") {
-    eDivPercentBar.style.backgroundColor = '#ff9900';
+    eDivPercentBar.style.backgroundColor = '#f7f259';
   } else if (value === "Unknown") {
-    eDivPercentBar.style.backgroundColor = 'grey';
+    eDivPercentBar.style.backgroundColor = '#d4d3cd';
   }
   else {
-    eDivPercentBar.style.backgroundColor = 'red';
+    eDivPercentBar.style.backgroundColor = '#fa4d4d';
   }
 
   eDivPercentBar.textContent = value;
