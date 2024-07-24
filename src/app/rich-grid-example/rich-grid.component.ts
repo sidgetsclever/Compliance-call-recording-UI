@@ -37,7 +37,7 @@ export class RichGridComponent {
   public rowData: any[];
   public columnDefs!: (ColDef | ColGroupDef)[];
   public rowCount!: string;
-
+  public failCount!: number;
   public defaultColDef: ColDef;
   public components: any;
   public sideBar!: boolean;
@@ -215,6 +215,9 @@ export class RichGridComponent {
       const model = this.api.getModel();
       const totalRows = this.rowData.length;
       const processedRows = model.getRowCount();
+      const nonFailCount = this.rowData.filter(row => 
+         Object.values(row).every(value => value !== 'Fail')).length;
+      this.failCount = processedRows - nonFailCount;
       this.rowCount = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString();
     }
   }

@@ -9,6 +9,9 @@
         <div style="float: left">
           <button (click)="this.createRowData()" class="btn btn-primary">Refresh Data</button>
         </div>
+        <div style="float: right;">
+          <b>Number of Failed Calls:</b>{{failCount}}
+        </div>
       </div>
     </div>
     <ag-grid-angular style="width: 100%; padding-right: 20px; height: 650px;" class="ag-theme-alpine"
